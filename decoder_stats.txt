@@ -1,0 +1,30 @@
+Decoder_model(
+  (embedding_layer): Embedding(24708, 300)
+  (decoder): TransformerDecoder(
+    (layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=300, out_features=300, bias=True)
+        )
+        (multihead_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=300, out_features=300, bias=True)
+        )
+        (linear1): Linear(in_features=300, out_features=300, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+        (linear2): Linear(in_features=300, out_features=300, bias=True)
+        (norm1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+        (norm3): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+        (dropout1): Dropout(p=0.1, inplace=False)
+        (dropout2): Dropout(p=0.1, inplace=False)
+        (dropout3): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (fc): Linear(in_features=300, out_features=24708, bias=True)
+  (sigmoid): Sigmoid()
+  (softmax): Softmax(dim=1)
+)
+Train Perplexity:  153.45155892575227
+Val Perplexity:  112.539743034322
+Test Perplexity:  88.99113541671903
